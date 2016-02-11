@@ -75,6 +75,7 @@ describe "#update_quality" do
       end
     end
 
+
     context "Sulfuras" do
       Given(:initial_quality) { 80 }
       Given(:name) { "Sulfuras, Hand of Ragnaros" }
@@ -95,6 +96,7 @@ describe "#update_quality" do
         Then { item.quality.should == initial_quality }
       end
     end
+
 
     context "Backstage pass" do
       Given(:name) { "Backstage passes to a TAFKAL80ETC concert" }
@@ -162,7 +164,6 @@ describe "#update_quality" do
     end
 
     context "conjured item" do
-      before { pending }
       Given(:name) { "Conjured Mana Cake" }
 
       Invariant { item.sell_in.should == initial_sell_in-1 }
@@ -198,7 +199,7 @@ describe "#update_quality" do
       end
     end
   end
-
+  #
   context "with several objects" do
     Given(:items) {
       [
